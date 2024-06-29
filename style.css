@@ -1,0 +1,78 @@
+/* Estilos Gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.tab-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Estilos para Cards */
+.card {
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-body {
+    text-align: center; /* Centraliza o texto dentro dos cards */
+}
+
+.card-title {
+    color: #0056b3;
+}
+
+.card-text {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Estilos para Tabelas */
+.table {
+    margin-top: 20px;
+    background-color: white;
+}
+
+.table thead th {
+    background-color: #007bff;
+    color: white;
+}
+
+.table tbody td {
+    border-top: none;
+}
+
+/* Estilos para Listas */
+.list-group-item {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+}
+
+/* Estilos para Gráficos */
+#investmentChart {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 20px; /* Adiciona espaço acima do gráfico */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 10px; /* Menos preenchimento em telas menores */
+    }
+}

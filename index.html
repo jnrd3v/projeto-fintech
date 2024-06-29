@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Fintech</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Minha Fintech</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#dashboard">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#transacoes">Transações</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#investimentos">Investimentos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5 tab-content">
+        <div class="tab-pane fade show active" id="dashboard">
+            <h1 class="mb-3">Visão Geral do Dashboard</h1>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Saldo Atual</h5>
+                            <p class="card-text">R$ 15.000,00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Últimas Receitas</h5>
+                            <p class="card-text">R$ 5.000,00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Últimas Despesas</h5>
+                            <p class="card-text">R$ 2.000,00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="transacoes">
+            <h2>Detalhes de Transações</h2>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Data</th>
+                            <th>Descrição</th>
+                            <th>Valor</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01/06/2024</td>
+                            <td>Transferência recebida</td>
+                            <td>R$200</td>
+                            <td>Crédito</td>
+                        </tr>
+                        <tr>
+                            <td>02/06/2024</td>
+                            <td>Pagamento realizado</td>
+                            <td>R$150</td>
+                            <td>Débito</td>
+                        </tr>
+                        <tr>
+                            <td>03/06/2024</td>
+                            <td>Depósito</td>
+                            <td>R$1.000</td>
+                            <td>Crédito</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="investimentos">
+            <h2>Portfólio de Investimentos</h2>
+            <ul class="list-group mb-3">
+                <li class="list-group-item">Valor total investido: R$10.000</li>
+                <li class="list-group-item">Retorno esperado: 5% ao ano</li>
+            </ul>
+            <h4>Desempenho dos Ativos</h4>
+            <div id="investmentChart" style="height: 300px;"></div>
+            <!-- Additional Bootstrap elements -->
+            <div class="mt-4">
+                <div class="card">
+                    <div class="card-header">Investimentos por Categoria</div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Ações: R$ 6.000</li>
+                        <li class="list-group-item">Títulos: R$ 3.000</li>
+                        <li class="list-group-item">Fundos: R$ 1.000</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('investmentChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho'],
+                datasets: [{
+                    label: 'Investimento em R$',
+                    data: [9000, 9500, 9700, 11000, 10500, 10000],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
